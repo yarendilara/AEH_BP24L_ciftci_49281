@@ -1,6 +1,10 @@
 package pl.pp;
+
 public class Circle {
     private double radius;
+
+    public Circle() {
+    }
 
     public Circle(double radius) {
         this.radius = radius;
@@ -11,23 +15,18 @@ public class Circle {
     }
 
     public void setRadius(double radius) {
-        if (radius > 0) {
-            this.radius = radius;
-        } else {
-            System.out.println("Radius must be positive.");
-        }
+        this.radius = radius;
     }
 
-    public double getArea() {
-        return Math.PI * radius * radius;
+    public double area() {
+        return Math.PI * Math.pow(radius, 2);
     }
 
-    public double getCircumference() {
+    public double circumference() {
         return 2 * Math.PI * radius;
     }
 
-    @Override
-    public String toString() {
-        return "Circle(radius=" + radius + ", area=" + getArea() + ", circumference=" + getCircumference() + ")";
+    public void getInfo() {
+        System.out.println("Circle with radius = " + radius + ", area = " + area() + " and circumference = " + circumference());
     }
 }

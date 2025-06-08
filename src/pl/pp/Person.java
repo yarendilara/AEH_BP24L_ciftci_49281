@@ -1,31 +1,60 @@
 package pl.pp;
 
-import pl.pp.Person;
+public class Person {
+    private String forename;
+    private String surname;
+    private int age;
 
-class mySeventhApp {
-    public static void main(String[] args) {
-        Person person1 = new Person();
-        person1.hiToAll();
+    public Person() {
+        this.forename = "";
+        this.surname = "";
+        this.age = 0;
+    }
 
-        person1.forename = "John";
-        person1.surname = "Doe";
-        person1.age = 24;
-        person1.hiToAll();
+    public Person(String initForename, String initSurname, int initAge) {
+        this.forename = initForename;
+        this.surname = initSurname;
+        this.age = initAge;
+    }
 
-        Person person2 = new Person("Alice", "Hart", 42);
-        person2.hiToAll();
+    public String getForename() {
+        return forename;
+    }
 
-        person1.growOld();
-        for (int i = 0; i < 3; i++) {
-            person2.growOld();
-        }
+    public String getSurname() {
+        return surname;
+    }
 
-        person1.hiToAll();
-        person2.hiToAll();
+    public int getAge() {
+        return age;
+    }
 
-        System.out.println(person1.getName());
-        person1.setName("Lolo");
-        System.out.println(person1.getName());
-        person1.hiToAll();
+    public void setForename(String forename) {
+        this.forename = forename;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void hiToAll() {
+        System.out.println("My name is " + forename + " " + surname + ". " + "I am " + age + " years old.");
+    }
+
+    public int growOld() {
+        age = age + 1;
+        return age;
+    }
+
+    public String getName() {
+        return forename;
+    }
+
+    public void setName(String nameToSet) {
+        this.forename = nameToSet;
     }
 }
