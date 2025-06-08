@@ -1,3 +1,5 @@
+package pl.pp;
+
 public class myFifthApp {
 
     public static void main(String[] args) {
